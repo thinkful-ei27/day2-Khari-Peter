@@ -83,3 +83,20 @@ function turleVector(arr){
   console.log(total);
   return total;
 }
+
+function decoder(sentence) {
+  const words = sentence.split(" ");
+  const finalResult = words.reduce((result, currentVal, i) => {
+    console.log(result);
+    if (currentVal.length === 3) {
+      result += " ";
+    } else {
+      const capitalLastChar = currentVal.charAt(words[i].length - 1).toUpperCase();
+      result += capitalLastChar;
+    }
+    return result;
+  }, "");
+  return finalResult;
+}
+
+console.log(decoder('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
