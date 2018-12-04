@@ -72,3 +72,14 @@ windWarning('Olympia place and Elwood Road');
 windWarning('Olympia place and Elwood Road');
 windWarning('Olympia place and Elwood Road');
 windWarning('Olympia place and Elwood Road');
+
+function turleVector(arr){
+  let newArray = arr.filter(vec => vec[0]>=0 && vec[1]>=0);
+  console.log(newArray);
+  let movement = newArray.map(vec => vec[0]+vec[1]);
+  console.log(movement); 
+  let total = 0;
+  movement.forEach(num => total+=num);
+  console.log(total);
+  return total;
+}
