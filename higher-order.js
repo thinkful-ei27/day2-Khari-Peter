@@ -42,3 +42,33 @@ const filteredNames = filter(myNames, function(name) {
 
 console.log(filteredNames) // => ['Rich', 'Ray']
 console.log(filter(myNames, name => name[0]==='R'));
+
+function hazardWarningCreator(typeOFWarning) {
+  let warningCounter = 0;
+  return function (location) {
+    warningCounter++;
+    console.log(`"Danger! there is a ${typeOFWarning} hazard at ${location}"`);
+    console.log(`"The ${typeOFWarning} hazard has been triggered ${warningCounter} time(s) today!"`);
+  }
+}
+
+// Rocks Warning
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Main St and Pacific Ave');
+
+// Flood Warning
+const floodWarning = hazardWarningCreator('Flooding in the area');
+floodWarning('Commercial Street and Union Ave');
+floodWarning('Commercial Street and Union Ave');
+floodWarning('Commercial Street and Union Ave');
+floodWarning('Commercial Street and Union Ave');
+
+const windWarning = hazardWarningCreator('High Winds and Gusts');
+windWarning('Olympia place and Elwood Road');
+windWarning('Olympia place and Elwood Road');
+windWarning('Olympia place and Elwood Road');
+windWarning('Olympia place and Elwood Road');
+windWarning('Olympia place and Elwood Road');
+windWarning('Olympia place and Elwood Road');
